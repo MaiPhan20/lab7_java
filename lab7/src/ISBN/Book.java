@@ -3,19 +3,39 @@ package ISBN;
 import java.util.Scanner;
 
 public class Book {
-    int ISBN[];
-    public Book(int ISBN[]) {
-        this.ISBN=ISBN;
+    int[] isbn;
+
+    public Book() {
+        isbn = new int[5];
     }
 
-    void setISBN(int ISBN[]) {
-    this.ISBN=ISBN;
-    }
-    public int getISBN() {
-        return ISBN[4];
 
+    public void setIsbn() {
+        System.out.println("Enter five ISBN numbers:");
+        Scanner input = new Scanner(System.in);
+        for (int index = 0; index < isbn.length; index++) {
+            isbn[index] = input.nextInt();
+        }
     }
-    void sortISBN(int[] arr) {
+
+    public void getIsbn() {
+        System.out.println("The ISBN number of the books are:");
+        for (int x = 0; x < isbn.length; x++) {
+            System.out.println(isbn[x]);
+        }
     }
+
+    public void sortIsbn() {
+        int x;
+        for (int i = 0; i < isbn.length; i++) {
+            for (int j = i + 1; j < isbn.length; j++) {
+                if (isbn[i] > isbn[j]) {
+                    x = isbn[i];
+                    isbn[i] = isbn[j];
+                    isbn[j] = x;
+                }
             }
-
+        }
+        getIsbn();
+    }
+}
