@@ -53,13 +53,10 @@ public class Book {
         return author;
     }
     void Outputsach(){
-        System.out.println("Name :" +name);
-        System.out.println("ISBN :" +ISBN);
-        System.out.println("Year Published :" +yearPublished);
-        System.out.println("Price: "+price);
-        System.out.println("Author :" +author);
-        System.out.println("Name         ISBN         Year           Price           Author");
-        System.out.println("\t"+name   +ISBN     + yearPublished     +price          +author);    }
+        System.out.println("ISBN         Book Name         Author Name           Price($)           Year of Publication");
+        System.out.println("---------------------------------------------------------------------------------------------");
+        System.out.println("" +ISBN+"\t\t\t"+name+"\t\t\t\t\t"+author+"\t\t\t\t\t\t"+price+"\t\t\t\t"+yearPublished+".");
+    }
     void Input(){
         Scanner s = new Scanner(System.in);
         System.out.println("Enter book name :");
